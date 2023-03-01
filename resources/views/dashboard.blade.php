@@ -4,14 +4,19 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    <div class="flex py-12">
+        <!-- Sidebar -->
+        <div class="w-1/3 bg-gray-100 p-4">
+            <x-sidebar-nav />
+        </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+        <!-- Main Area -->
+        <div class="w-2/3 p-4  ">
+
+            <h1>Main Area</h1>
+            <p> {{ __("You're logged in!") }}</p>
+
         </div>
     </div>
+
 </x-app-layout>
