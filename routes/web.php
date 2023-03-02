@@ -29,8 +29,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('brand')->middleware('auth')->group(function(){
-    Route::get('/', [BrandController::class,'index'])->name('brand.index');
+Route::prefix('brands')->middleware('auth')->group(function(){
+    Route::get('/', [BrandController::class,'index'])->name('brands.index');
+    Route::get('{brand}/edit',[BrandController::class,'edit'])->name('brands.edit');
+    Route::put('{brand}/update',[BrandController::class,'update'])->name('brands.update');
 });
 
 require __DIR__.'/auth.php';

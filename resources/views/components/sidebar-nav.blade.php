@@ -1,6 +1,6 @@
 
     <nav class="flex-grow px-4 py-8">
-        <a href={{route('brand.index')}} class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 hover:text-gray-800">
+        <a href={{route('brands.index')}} class="flex items-center py-2 px-4 text-gray-600 hover:bg-gray-100 hover:text-gray-800">
             <i class="fas fa-home mr-3"></i>
             Brands
         </a>

@@ -38,7 +38,7 @@
                                             <td class="border px-4 py-2">{{ $brand->name }}</td>
                                             <td><img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }} logo" class="max-w-xs brand-logo"></td>
                                             <td class="border px-4 py-2">
-
+                                                <a href="{{ route('brands.edit', $brand->id) }}" class="ml-2 text-blue-600 hover:text-blue-900">Edit</a>
                                             </td>
                                         </tr>
                                     @endforeach

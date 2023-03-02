@@ -13,4 +13,18 @@ class BrandController extends Controller
         return view('brands.index', compact('brands'));
 
     }
+    //implicit binding
+    public function edit(Brand $brand){
+         return view('brands.edit',compact('brand'));
+    }
+
+    public function update(Request $request, Brand $brand){
+        $request->validate([
+            'name'=>'required|max:255'
+        ]);
+        $brand->update($request->all());
+
+        return redirect()->route('brands.index')->with('success', 'Brand updated successfully');
+
+    }
 }
