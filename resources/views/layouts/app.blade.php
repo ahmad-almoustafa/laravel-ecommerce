@@ -16,7 +16,9 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-            @include('layouts.navigation')
+            <!-- Page Content -->
+            <main>
+                <x-layout.navbar />
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -25,12 +27,16 @@
                         {{ $header }}
                     </div>
                 </header>
-            @endif
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            @endif
+                <div class="py-10">
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        {{ $slot }}
+                    </div>
+                </div>
             </main>
+
+            <x-layout.footer />
         </div>
     </body>
 </html>

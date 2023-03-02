@@ -10,7 +10,7 @@
     <div class="flex py-12">
         <!-- Sidebar -->
         <div class="w-1/3 bg-gray-100 p-4">
-            <x-sidebar-nav />
+            <x-layout.sidebar-nav />
         </div>
         <!-- Main Area -->
         <div class="w-2/3 p-4  ">
