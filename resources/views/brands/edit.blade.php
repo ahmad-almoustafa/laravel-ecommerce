@@ -21,33 +21,23 @@
                             @method('PUT')
                             <!-- Brand Name Input -->
                             <div class="mt-8">
-                                <label for="name"
-                                    class="block font-medium text-sm text-gray-700">{{ __('Brand Name') }}</label>
-                                <input id="name" class="block mt-1 w-full" type="text" name="name"
-                                    value="{{ old('name', $brand->name) }}" required autofocus />
-                                @if ($errors->has('name'))
-                                    <p class="mt-2 text-sm text-red-600">{{ $errors->first('name') }}</p>
-                                @endif
+                                <x-forms.label for="name">{{ __('Brand Name') }}</x-forms.label>
+                                <x-forms.input id="name" class="block mt-1 w-full" type="text" name="name"
+                                    value="{{ $brand->name }}" required autofocus />
+                                <x-forms.validation-error name='name' />
                             </div>
                             <!-- Brand Logo Input -->
                             <div class="mt-8">
-                                <label for="logo"
-                                    class="block font-medium text-sm text-gray-700">{{ __('Brand Logo') }}</label>
-                                <input id="logo" class="block mt-1 w-full" type="file" name="logo" />
-                                @if ($errors->has('logo'))
-                                    <p class="mt-2 text-sm text-red-600">{{ $errors->first('logo') }}</p>
-                                @endif
+                                <x-forms.label for="logo">{{ __('Brand Logo') }}</x-forms.label>
+                                <x-forms.input id="logo" class="block mt-1 w-full" type="file" name="logo" />
+                                <x-forms.validation-error name='logo' />
                                 <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }} logo"
                                     class="brand-logo mt-2" />
                             </div>
                             <!-- Submit Button -->
                             <div class="flex items-center justify-end mt-4">
-                                <button type="submit"
-                                    class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded ml-4">{{ __('Update') }}</button>
+                                <x-forms.button type="submit">{{ __('Update') }}</x-forms.button>
                             </div>
-
-
-
 
                         </form>
                     </div>
