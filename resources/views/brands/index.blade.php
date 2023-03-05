@@ -22,7 +22,7 @@
                 Brands List
             </div>
 
-
+            <x-widgets.alert/>
             <div class="mt-6">
                 <table class="table-auto w-full">
                     <x-widgets.table-header :columns="['#', 'Name', 'Logo', 'Actions']" />
@@ -32,15 +32,16 @@
                             <tr>
                                 <td class="border px-4 py-2">{{ $loop->iteration }}</td>
                                 <td class="border px-4 py-2">{{ $brand->name }}</td>
-                                <td><img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }} logo"
-                                        class="max-w-xs brand-logo"></td>
-                                        <td class="border px-4 py-2">
-                                            <a href="{{ route('brands.edit', $brand->id) }}" 
-                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                                <i class="fas fa-edit mr-2"></i> 
-                                                Edit
-                                            </a>
-                                        </td>
+                                <td>
+                                    <img src="{{ asset('storage/brands/'.$brand->logo) }}" alt="{{ $brand->name }} logo" class="max-w-xs brand-logo">
+                                </td>
+                                <td class="border px-4 py-2">
+                                    <a href="{{ route('brands.edit', $brand->id) }}" 
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        <i class="fas fa-edit mr-2"></i> 
+                                        Edit
+                                    </a>
+                                </td>
 
                             </tr>
                         @endforeach

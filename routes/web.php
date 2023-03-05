@@ -31,8 +31,11 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('brands')->middleware('auth')->group(function(){
     Route::get('/', [BrandController::class,'index'])->name('brands.index');
+    Route::get('/create',[BrandController::class,'create'])->name('brands.create');
+    Route::post('/store',[BrandController::class,'store'])->name('brands.store');
     Route::get('{brand}/edit',[BrandController::class,'edit'])->name('brands.edit');
     Route::put('{brand}/update',[BrandController::class,'update'])->name('brands.update');
+
 });
 
 require __DIR__.'/auth.php';
