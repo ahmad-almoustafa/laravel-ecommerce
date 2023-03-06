@@ -37,10 +37,17 @@
                                 </td>
                                 <td class="border px-4 py-2">
                                     <a href="{{ route('brands.edit', $brand->id) }}" 
-                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded">
                                         <i class="fas fa-edit mr-2"></i> 
                                         Edit
                                     </a>
+                                    <x-forms.button type="button" 
+                                        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                                        onclick="openModal('{{ route('brands.destroy', $brand->id) }}')">
+                                        <i class="fas fa-trash-alt mr-2"></i> 
+                                        Delete
+                                    </x-forms.button>
+                                  
                                 </td>
 
                             </tr>
@@ -48,8 +55,18 @@
                     </tbody>
                 </table>
             </div>
+          
 
+            <x-widgets.confirmation-modal 
+                title="Delete Brand" 
+                message="Are you sure you want to delete this brand? This action cannot be undone."              
+            />
+            
 
         </div>
+
     </x-layout.dashboard-page-layout>
-</x-app-layout>
+</x-app-layout> 
+
+
+
